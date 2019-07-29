@@ -12,7 +12,7 @@ ENV PORT=27015
 RUN apt-get update \
     && apt-get install -y lib32gcc1 libc6-dev wget \
     && addgroup --gid "$PGID" --group "$GROUP" \
-    && adduser --uid "$PUID" --ingroup "$GROUP" --shell /bin/sh --no-create-home --disabled-password "$USER" || echo "y" \
+    && adduser --uid "$PUID" --ingroup "$GROUP" --shell /bin/sh --disabled-password "$USER" || echo "y" \
     && mkdir -p /opt/steamcmd \
     && cd /opt/steamcmd \
     && wget http://media.steampowered.com/client/steamcmd_linux.tar.gz \
